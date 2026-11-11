@@ -40,3 +40,7 @@ Uninstalling the extension deletes its templates, so **Export** first.
 ---
 
 Technical notes (permissions, how inserting works, per-site notes): [NOTES.md](NOTES.md).
+
+## License and disclaimer
+
+MIT, see [LICENSE](LICENSE). Nocopas is an independent project and is not affiliated with, endorsed by or sponsored by WhatsApp, Meta, Instagram, Threads, TikTok or X. All product names and trademarks belong to their respective owners.
