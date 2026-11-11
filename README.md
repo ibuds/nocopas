@@ -43,4 +43,4 @@ Technical notes (permissions, how inserting works, per-site notes): [NOTES.md](N
 
 ## License and disclaimer
 
-MIT, see [LICENSE](LICENSE). Nocopas is an independent project and is not affiliated with, endorsed by or sponsored by WhatsApp, Meta, Instagram, Threads, TikTok or X. All product names and trademarks belong to their respective owners.
+MIT, see [LICENSE](LICENSE). Privacy: see [PRIVACY.md](PRIVACY.md). Nocopas is an independent project and is not affiliated with, endorsed by or sponsored by WhatsApp, Meta, Instagram, Threads, TikTok or X. All product names and trademarks belong to their respective owners.
