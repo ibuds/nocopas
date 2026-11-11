@@ -1,4 +1,4 @@
-# NC Template Panel: technical notes
+# Nocopas: technical notes
 
 For install and daily use, see [README.md](README.md).
 
@@ -10,7 +10,7 @@ Data lives in `chrome.storage.local` under the key `templates`: `{ id, body, cat
 
 ## Suggestions (Instagram and Threads DMs)
 
-Files: `extract.js` (`readConversation()`, run in the page) and `matcher.js` (`NCMatch`, runs in the panel).
+Files: `extract.js` (`readConversation()`, run in the page) and `matcher.js` (`NocopasMatch`, runs in the panel).
 
 **Reading the chat.** While the panel is visible, it runs `readConversation` on the active tab every 2.5 s, on tab switch and on navigation, but only when the tab is on `instagram.com`, `threads.com` or `threads.net` *and* that site is allowed in Sites (without the grant Chrome hides the tab URL and refuses the script). Both sites use generated class names, so the reader uses layout, not selectors:
 1. The message box: the focused `contenteditable` / `textarea` / `role="textbox"`, else the lowest visible one.

@@ -1,4 +1,4 @@
-// NC Template Panel: UI and storage. insertIntoFocusedField() comes from inject.js.
+// Nocopas: UI and storage. insertIntoFocusedField() comes from inject.js.
 (function () {
   'use strict';
 
@@ -130,7 +130,7 @@
     var list = [];
     if (state.convo && state.tab === 'active' && !state.query.trim()) {
       var active = state.templates.filter(function (t) { return !t.archived; });
-      list = NCMatch.suggest(active, state.convo.messages, state.learned, Date.now(), 3);
+      list = NocopasMatch.suggest(active, state.convo.messages, state.learned, Date.now(), 3);
     }
     box.hidden = list.length === 0;
     var wrap = $('suggest-list');
@@ -241,7 +241,7 @@
       save();
       // Remember which words led to this template, so suggestions improve with use.
       if (state.convo) {
-        NCMatch.learn(state.learned, t.id, state.convo.messages, Date.now());
+        NocopasMatch.learn(state.learned, t.id, state.convo.messages, Date.now());
         chrome.storage.local.set({ [LEARN_KEY]: state.learned });
       }
     }
@@ -386,8 +386,8 @@
       lines.push(new Date(rec.at).toLocaleTimeString() + '  ' + (rec.host || '-') + '  ' + rec.status);
       if (rec.messages) {
         rec.messages.forEach(function (m) { lines.push('  customer: "' + m + '"'); });
-        var scores = NCMatch.suggest(active, rec.messages, state.learned, Date.now(), 5, 0.01);
-        lines.push('  scores (shown at ' + NCMatch.MIN_SCORE + '+): ' + (scores.length ? scores.map(function (s) {
+        var scores = NocopasMatch.suggest(active, rec.messages, state.learned, Date.now(), 5, 0.01);
+        lines.push('  scores (shown at ' + NocopasMatch.MIN_SCORE + '+): ' + (scores.length ? scores.map(function (s) {
           return s.template.category + ' "' + s.template.body.replace(/\s+/g, ' ').slice(0, 24) + '..." ' + s.score.toFixed(1) + ' [' + s.matched.join(', ') + ']';
         }).join(' | ') : 'no template shares a word with these messages'));
       }
@@ -588,7 +588,7 @@
     var url = URL.createObjectURL(blob);
     var a = document.createElement('a');
     a.href = url;
-    a.download = 'nc-templates-' + new Date().toISOString().slice(0, 10) + '.json';
+    a.download = 'nocopas-templates-' + new Date().toISOString().slice(0, 10) + '.json';
     document.body.appendChild(a);
     a.click();
     a.remove();

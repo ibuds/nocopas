@@ -1,6 +1,6 @@
 // Template suggestions: scores templates against the customer's latest messages.
 // Runs only in the panel; nothing is sent anywhere.
-var NCMatch = (function () {
+var NocopasMatch = (function () {
   'use strict';
 
   // Filler words that say nothing about what the customer wants (Indonesian chat + English).
